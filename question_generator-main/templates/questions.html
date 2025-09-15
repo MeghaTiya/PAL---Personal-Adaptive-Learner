@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Questions - Agentic Question Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .question-card {
+            transition: all 0.3s ease;
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .difficulty-badge {
+            font-size: 0.8em;
+        }
+        .filter-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .stats-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-robot"></i> Agentic Question Generator
+            </a>
+            <a class="btn btn-outline-light" href="/">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <!-- File Selection -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label for="fileSelect" class="form-label">Select Questions File:</label>
+                <select id="fileSelect" class="form-select">
+                    <option value="">Choose a file...</option>
+                </select>
+            </div>
+            <div class="col-md-6 d-flex align-items-end">
+                <button id="loadBtn" class="btn btn-primary me-2" disabled>
+                    <i class="fas fa-load"></i> Load Questions
+                </button>
+                <button id="refreshBtn" class="btn btn-outline-secondary">
+                    <i class="fas fa-refresh"></i> Refresh Files
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-5" style="display: none;">
+            <i class="fas fa-spinner fa-spin fa-3x text-primary"></i>
+            <p class="mt-3">Loading questions...</p>
+        </div>
+
+        <!-- No File Selected -->
+        <div id="noFileState" class="text-center py-5">
+            <i class="fas fa-file-question fa-3x text-muted"></i>
+            <p class="mt-3 text-muted">Select a questions file to view the generated questions.</p>
+        </div>
+
+        <!-- Questions Content -->
+        <div id="questionsContent" style="display: none;">
+            <!-- Statistics -->
+            <div class="stats-card">
+                <div class="row" id="statsRow">
+                    <!-- Stats will be populated here -->
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="form-label">Difficulty:</label>
+                        <select id="difficultyFilter" class="form-select">
+                            <option value="">All Difficulties</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Type:</label>
+                        <select id="typeFilter" class="form-select">
+                            <option value="">All Types</option>
+                            <option value="factual">Factual</option>
+                            <option value="conceptual">Conceptual</option>
+                            <option value="application">Application</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Search:</label>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search questions...">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button id="clearFilters" class="btn btn-outline-secondary">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questions List -->
+            <div id="questionsList">
+                <!-- Questions will be populated here -->
+            </div>
+
+            <!-- Download Button -->
+            <div class="text-center mt-4">
+                <button id="downloadBtn" class="btn btn-success btn-lg">
+                    <i class="fas fa-download"></i> Download Questions (JSON)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let allQuestions = [];
+        let filteredQuestions = [];
+        let currentFile = '';
+
+        // Load available files on page load
+        document.addEventListener('DOMContentLoaded', loadAvailableFiles);
+
+        // Event listeners
+        document.getElementById('fileSelect').addEventListener('change', handleFileSelect);
+        document.getElementById('loadBtn').addEventListener('click', loadQuestions);
+        document.getElementById('refreshBtn').addEventListener('click', loadAvailableFiles);
+        document.getElementById('difficultyFilter').addEventListener('change', applyFilters);
+        document.getElementById('typeFilter').addEventListener('change', applyFilters);
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
+        document.getElementById('clearFilters').addEventListener('click', clearFilters);
+
+        async function loadAvailableFiles() {
+            try {
+                const response = await fetch('/api/files');
+                const data = await response.json();
+                
+                const fileSelect = document.getElementById('fileSelect');
+                fileSelect.innerHTML = '<option value="">Choose a file...</option>';
+                
+                data.files.forEach(file => {
+                    const option = document.createElement('option');
+                    option.value = file;
+                    option.textContent = file;
+                    fileSelect.appendChild(option);
+                });
+                
+            } catch (error) {
+                console.error('Error loading files:', error);
+                showAlert('Error loading available files.', 'danger');
+            }
+        }
+
+        function handleFileSelect() {
+            const fileSelect = document.getElementById('fileSelect');
+            const loadBtn = document.getElementById('loadBtn');
+            
+            if (fileSelect.value) {
+                loadBtn.disabled = false;
+                currentFile = fileSelect.value;
+            } else {
+                loadBtn.disabled = true;
+                currentFile = '';
+            }
+        }
+
+        async function loadQuestions() {
+            if (!currentFile) return;
+            
+            showLoadingState();
+            
+            try {
+                const response = await fetch(`/api/questions/${currentFile}`);
+                if (!response.ok) {
+                    throw new Error('Failed to load questions');
+                }
+                
+                allQuestions = await response.json();
+                filteredQuestions = [...allQuestions];
+                
+                displayQuestions();
+                showQuestionsContent();
+                
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                showAlert('Error loading questions from file.', 'danger');
+                showNoFileState();
+            }
+        }
+
+        function showLoadingState() {
+            document.getElementById('noFileState').style.display = 'none';
+            document.getElementById('questionsContent').style.display = 'none';
+            document.getElementById('loadingState').style.display = 'block';
+        }
+
+        function showNoFileState() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('questionsContent').style.display = 'none';
+            document.getElementById('noFileState').style.display = 'block';
+        }
+
+        function showQuestionsContent() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('noFileState').style.display = 'none';
+            document.getElementById('questionsContent').style.display = 'block';
+        }
+
+        function displayQuestions() {
+            displayStats();
+            displayQuestionsList();
+        }
+
+        function displayStats() {
+            const stats = analyzeQuestions(filteredQuestions);
+            const statsRow = document.getElementById('statsRow');
+            
+            statsRow.innerHTML = `
+                <div class="col-md-3 text-center">
+                    <h3>${filteredQuestions.length}</h3>
+                    <p>Total Questions</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h3>${stats.easy}</h3>
+                    <p>Easy</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h3>${stats.medium}</h3>
+                    <p>Medium</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <h3>${stats.hard}</h3>
+                    <p>Hard</p>
+                </div>
+            `;
+        }
+
+        function displayQuestionsList() {
+            const questionsList = document.getElementById('questionsList');
+            
+            if (filteredQuestions.length === 0) {
+                questionsList.innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="fas fa-search fa-3x text-muted"></i>
+                        <p class="mt-3 text-muted">No questions match your current filters.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let questionsHtml = '';
+            filteredQuestions.forEach((q, index) => {
+                const difficultyClass = {
+                    'easy': 'success',
+                    'medium': 'warning', 
+                    'hard': 'danger'
+                }[q.question.difficulty] || 'secondary';
+                
+                const typeClass = {
+                    'factual': 'primary',
+                    'conceptual': 'info',
+                    'application': 'warning'
+                }[q.question.type] || 'secondary';
+                
+                questionsHtml += `
+                    <div class="card question-card mb-3">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>Question ${index + 1}</strong>
+                                <span class="text-muted">- ${q.timestamp}</span>
+                            </div>
+                            <div>
+                                <span class="badge bg-${difficultyClass} difficulty-badge me-1">${q.question.difficulty}</span>
+                                <span class="badge bg-${typeClass} difficulty-badge">${q.question.type}</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-primary mb-3">${q.question.text}</h6>
+                            
+                            ${q.question.options && q.question.options.length > 0 ? `
+                                <div class="mb-3">
+                                    <strong>Options:</strong>
+                                    <ul class="mt-2">
+                                        ${q.question.options.map(option => `<li>${option}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                            
+                            <div class="mb-2">
+                                <strong>Answer:</strong> 
+                                <span class="text-dark">${q.question.answer}</span>
+                            </div>
+                            
+                            ${q.question.concept ? `
+                                <div class="mb-2">
+                                    <strong>Concept:</strong> 
+                                    <span class="text-muted">${q.question.concept}</span>
+                                </div>
+                            ` : ''}
+                            
+                            <details class="mt-3">
+                                <summary class="text-muted" style="cursor: pointer;">View Context</summary>
+                                <div class="mt-2 p-3" style="background: #f8f9fa; border-radius: 5px;">
+                                    <p><strong>Transcript:</strong> ${q.segment_text || 'No transcript available'}</p>
+                                    ${q.visual_elements ? `<p><strong>Slide Text:</strong> ${q.visual_elements}</p>` : ''}
+                                    ${q.vlm_analysis ? `<p><strong>VLM Analysis:</strong> ${q.vlm_analysis}</p>` : ''}
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            questionsList.innerHTML = questionsHtml;
+        }
+
+        function applyFilters() {
+            const difficultyFilter = document.getElementById('difficultyFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            filteredQuestions = allQuestions.filter(q => {
+                // Difficulty filter
+                if (difficultyFilter && q.question.difficulty !== difficultyFilter) {
+                    return false;
+                }
+                
+                // Type filter
+                if (typeFilter && q.question.type !== typeFilter) {
+                    return false;
+                }
+                
+                // Search filter
+                if (searchTerm) {
+                    const searchText = `
+                        ${q.question.text} 
+                        ${q.question.answer} 
+                        ${q.context.transcript_snippet}
+                    `.toLowerCase();
+                    
+                    if (!searchText.includes(searchTerm)) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            });
+            
+            displayQuestions();
+        }
+
+        function clearFilters() {
+            document.getElementById('difficultyFilter').value = '';
+            document.getElementById('typeFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+        }
+
+        function analyzeQuestions(questions) {
+            const stats = { easy: 0, medium: 0, hard: 0 };
+            questions.forEach(q => {
+                const difficulty = q.question.difficulty || 'medium';
+                stats[difficulty] = (stats[difficulty] || 0) + 1;
+            });
+            return stats;
+        }
+
+        // Download functionality
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            if (filteredQuestions.length === 0) return;
+            
+            const dataStr = JSON.stringify(filteredQuestions, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = `filtered_${currentFile}`;
+            link.click();
+        });
+
+        function showAlert(message, type) {
+            // Simple alert implementation
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            
+            document.querySelector('.container').insertBefore(alertDiv, document.querySelector('.container').firstChild);
+            
+            // Auto-dismiss after 5 seconds
+            setTimeout(() => {
+                if (alertDiv.parentNode) {
+                    alertDiv.remove();
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

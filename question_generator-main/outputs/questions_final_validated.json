@@ -1,0 +1,1042 @@
+[
+  {
+    "timestamp": "01:07:35",
+    "context": {
+      "timestamp": "01:07:35",
+      "transcript_snippet": "So this is called the predator prey model, which is more like a bidirectional causal ffcb0144-daed-473f-817a-762d10eeefd8/5816-1",
+      "slide_text": "Educational slide explaining the predator-prey model and bidirectional causal relationships",
+      "educational_content": "Educational slide explaining the predator-prey model and bidirectional causal relationships",
+      "visual_description": "VLM Analysis: Diagram showing predator-prey relationship, Educational model illustration",
+      "visual_elements": [
+        "Diagram showing predator-prey relationship",
+        "Educational model illustration"
+      ],
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "VLM",
+      "quality_score": 7,
+      "content_quality": 7,
+      "key_concepts": [
+        "Predator-Prey Model",
+        "Bidirectional Causation"
+      ]
+    },
+    "question": {
+      "text": "What is the primary concept described in the predator-prey model, which highlights the interconnectedness of predator and prey relationships?",
+      "type": "factual",
+      "options": [],
+      "answer": "The predator-prey model describes a bidirectional causal relationship between predators and their prey, where changes in one species can affect the population dynamics of the other.",
+      "concept": "Bidirectional Causal Relationships",
+      "difficulty": "Easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:34:31",
+    "context": {
+      "timestamp": "00:34:31",
+      "transcript_snippet": "So this practice is called data wrenching where we have thousands of variables in ffcb0144-daed-473f-817a-762d10eeefd8/2196-1",
+      "slide_text": "Slide discussing data analysis techniques and statistical methodology",
+      "educational_content": "Slide discussing data analysis techniques and statistical methodology",
+      "visual_description": "VLM Analysis: Bullet points about data analysis, Statistical concepts illustration",
+      "visual_elements": [
+        "Bullet points about data analysis",
+        "Statistical concepts illustration"
+      ],
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "VLM",
+      "quality_score": 7,
+      "content_quality": 7,
+      "key_concepts": [
+        "Data Analysis",
+        "Statistical Methods"
+      ]
+    },
+    "question": {
+      "text": "What is the term used to describe the process of analyzing large datasets with thousands of variables?",
+      "type": "factual",
+      "options": [],
+      "answer": "Data wrenching is a term used to describe the process of analyzing large datasets with thousands of variables. This technique involves using various statistical methodologies to extract insights and meaning from the data.",
+      "concept": "Data Analysis Techniques",
+      "difficulty": "Medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:51:32",
+    "context": {
+      "timestamp": "00:51:32",
+      "transcript_snippet": "more likely to develop short sightedness when they grow up. ffcb0144-daed-473f-817a-762d10eeefd8/4096-0",
+      "slide_text": "Puzzle time 3: Can't you see the flaw? \u00ab Astudy from the University of Pennsylvania, published in the May 13, 1999 issue of Nature, that found babies younger than 2 years old who slept with a light on were at increased risk of developing myopia - nearsightedness - later in childhood. * In the current study of 1,220 children, Ohio State University researchers found no association between nighttime lighting and the development of nearsightedness. It didn't matter if the child had slept in a dark room, with a night light on or in a fully lit room. \u00ab What the researchers did find, however, was a strong link between nearsighted parents and nearsighted children.",
+      "visual_description": "Frame 1920x1080, brightness: 183.6, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What was found to be a potential risk factor for developing nearsightedness (myopia) in children under 2 years old, according to a study published in Nature in 1999?",
+      "type": "factual",
+      "options": [],
+      "answer": "Sleeping with a light on was found to increase the risk of developing myopia in babies younger than 2 years old.",
+      "concept": "Association between nighttime lighting and nearsightedness",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:52:22",
+    "context": {
+      "timestamp": "00:52:22",
+      "transcript_snippet": "So parents who are near sighted or shortsighted are more likely to have kids ffcb0144-daed-473f-817a-762d10eeefd8/4182-1",
+      "slide_text": "Puzzle time 3: Can't you see the flaw? \u00ab Astudy from the University of Pennsylvania, published in the May 13, 1999 issue of Nature, that found babies younger than 2 years old who slept with a light on were at increased risk of developing myopia - nearsightedness - later in childhood. * In the current study of 1,220 children, Ohio State University researchers found no association between nighttime lighting and the development of nearsightedness. It didn't matter if the child had slept in a dark room, with a night light on or in a fully lit room. \u00ab What the researchers did find, however, was a strong link between nearsighted parents and nearsighted children.",
+      "visual_description": "Frame 1920x1080, brightness: 183.5, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the relationship between nighttime lighting and the development of nearsightedness in children?",
+      "type": "factual",
+      "options": [],
+      "answer": "Research from Ohio State University found no association between nighttime lighting and the development of nearsightedness, contradicting a previous study that suggested babies under 2 years old who slept with a light on were at increased risk.",
+      "concept": "The relationship between environmental factors and eye health in children",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:22:28",
+    "context": {
+      "timestamp": "01:22:28",
+      "transcript_snippet": "It's not like perfectly proportional, but when you're having the population ffcb0144-daed-473f-817a-762d10eeefd8/7243-1",
+      "slide_text": "Correlation Research een ty oSaves money and time oCan allow one to make predictions oAllows use of preexisting data PeyET-Te NV e-t.-1- 79 oCan\u2019t establish CAUSE & EFFECT oProne to inaccurate reporting ( survey) oConfounding variables oCan\u2019t manipulate variables",
+      "visual_description": "Frame 1920x1080, brightness: 160.0, moderate visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "Analyze the strengths and limitations of correlation research. Provide an example of how it can be used in real-world scenarios.",
+      "type": "application",
+      "options": [],
+      "answer": "Correlation research has several strengths, including saving money and time by allowing researchers to make predictions using preexisting data. However, it also has significant limitations, such as not being able to establish cause-and-effect relationships and being prone to inaccurate reporting due to confounding variables. For instance, a researcher might find a correlation between the amount of ice cream sold in a town and the number of children's birthday parties held there. While this correlation can help predict future sales, it does not necessarily mean that eating ice cream causes an increase in birthday party attendance. In reality, other factors like weather or school schedules might be driving both trends.",
+      "concept": "Correlation Research",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:26:13",
+    "context": {
+      "timestamp": "00:26:13",
+      "transcript_snippet": "more likely to have more number of noble laureates in their. ffcb0144-daed-473f-817a-762d10eeefd8/1250-0",
+      "slide_text": "204 Nobel Laureates per 10 Million Population Portuga & Sweden r=0.791 P<0.0001 Denmark Austria $= Norway S$ united Kingdom United Ireland Germany The Netherlands States aT: France Belgium ll Ee Finand Poland Bigg Australia | Greec&\\ _ | Italy E Spain Japan es Brazil Switzerland T T 5 10 Chocolate Consumption (kg/yr/capita) Figure 1. Correlation between Countries\u2019 Annual Per Capita Chocolate Consumption and the Number of Nobel Laureates per 10 Million Population.",
+      "visual_description": "Frame 1920x1080, brightness: 184.0, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the relationship between a country's annual per capita chocolate consumption and its number of Nobel laureates, as indicated by the correlation coefficient?",
+      "type": "factual",
+      "options": [],
+      "answer": "The correlation coefficient shows a strong positive relationship (r = 0.791) between a country's annual per capita chocolate consumption and its number of Nobel laureates, suggesting that countries with higher chocolate consumption tend to have more Nobel laureates.",
+      "concept": "Correlation coefficient and relationship between variables",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:29:44",
+    "context": {
+      "timestamp": "00:29:44",
+      "transcript_snippet": "Summertime, when are people more likely to be outside ffcb0144-daed-473f-817a-762d10eeefd8/1593-1",
+      "slide_text": "UFO sightings in South Carolina correlates with Total Number of Successful Mount Everest Climbs 113 85 UFO sightings & SJAQuIIIO. I 1 1 1975 1981 1987 1993 1999 2005 2011 The aliens were big fans of extreme sports and decided to start an intergalactic Mount Everest fan club, providing secret technological assistance to climbers. Who knew that E.T. was an adrenaline junkie? hltns://vnw tylervigen com/spurious/correlation/2423_ufo-sightings-in-south-carolina correlates-with total-number-of-successful-mount-everest-climbsa",
+      "visual_description": "Frame 1920x1080, brightness: 148.3, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the correlation between UFO sightings in South Carolina and successful Mount Everest climbs, according to the slide content?",
+      "type": "factual",
+      "options": [],
+      "answer": "There is no actual correlation between UFO sightings in South Carolina and successful Mount Everest climbs. The claim that aliens started an intergalactic Mount Everest fan club providing secret technological assistance to climbers appears to be a fictional or humorous anecdote.",
+      "concept": "correlation, critical thinking, skepticism",
+      "difficulty": "hard"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:31:20",
+    "context": {
+      "timestamp": "00:31:20",
+      "transcript_snippet": "Because even though like, is that the ice cream sells rise in July ffcb0144-daed-473f-817a-762d10eeefd8/1775-1",
+      "slide_text": "/ Ice Cream Sales & Shark Attacks",
+      "visual_description": "Frame 1920x1080, brightness: 186.5, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What seasonal trend is often associated with an increase in ice cream sales?",
+      "type": "factual",
+      "options": [],
+      "answer": "Ice cream sales typically rise in July due to warmer weather, making it a popular treat during the summer months.",
+      "concept": "Seasonal trends and consumer behavior",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:33:44",
+    "context": {
+      "timestamp": "00:33:44",
+      "transcript_snippet": "like why do people plot those two different variables that we have seen in ffcb0144-daed-473f-817a-762d10eeefd8/2107-2",
+      "slide_text": "Why this works: Dragging: 150,000 variables in my database. Comparing all these variables against each other to find ones that match up. That's 2,400,000 combinations. What if I have a million more?",
+      "educational_content": "Why this works: Dragging: 150,000 variables in my database. Comparing all these variables against each other to find ones that match up. That's 2,400,000 combinations. What if I have a million more?",
+      "visual_description": "VLM Analysis: Bullet points outlining the process of dragging",
+      "visual_elements": [
+        "Bullet points outlining the process of dragging"
+      ],
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "VLM",
+      "quality_score": 9,
+      "content_quality": 9,
+      "key_concepts": [
+        "Dragging",
+        "Database management",
+        "Data comparison"
+      ]
+    },
+    "question": {
+      "text": "What is the primary purpose of using dragging in data analysis, and how does it relate to comparing multiple variables?",
+      "type": "conceptual",
+      "options": [],
+      "answer": "The primary purpose of using dragging in data analysis is to compare different variables against each other to find matching patterns or correlations. This process involves selecting two or more variables from a large database (in this case, 150,000 variables) and examining the relationships between them. By analyzing these combinations (2,400,000 possible pairs), we can identify potential connections or outliers that might not be immediately apparent through other methods.",
+      "concept": "Comparing multiple variables to find correlations",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:37:22",
+    "context": {
+      "timestamp": "00:37:22",
+      "transcript_snippet": "variables where you can establish relations such as a causes B&amp;B. ffcb0144-daed-473f-817a-762d10eeefd8/2608-0",
+      "slide_text": "Causality is a relationship \u201cA\u201d causes \u201cB\u201d * Causality is at the core of everything we see, do, and imagine. * Correlation is not Causation o Younger drivers have high probability of being in an accident = Does not imply younger drivers cause accidents CO >) oo ~\\ C AD C BD Effect ~ rae\u00bb Ti ) x 5 nN Age Cause \u2014 Accident _ s Effect",
+      "visual_description": "Frame 1920x1080, brightness: 164.2, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What does the phrase 'Correlation is not Causation' imply about the relationship between two variables?",
+      "type": "factual",
+      "options": [],
+      "answer": "It implies that just because two variables are related or tend to occur together, it doesn't mean that one causes the other. For example, younger drivers having a high probability of being in an accident does not necessarily mean that younger drivers cause accidents.",
+      "concept": "Causality and Correlation",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:11:24",
+    "context": {
+      "timestamp": "01:11:24",
+      "transcript_snippet": "So when people were scared, it's causing the crowd and like the ffcb0144-daed-473f-817a-762d10eeefd8/6080-1",
+      "slide_text": "Question: Can you think of any other examples of bidirectional cause?",
+      "visual_description": "Frame 1920x1080, brightness: 163.7, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What are some real-world examples of bidirectional cause-and-effect relationships, where one event can both cause and result in another event?",
+      "type": "application",
+      "options": [],
+      "answer": "Examples of bidirectional cause-and-effect relationships include: a firework explosion causing a crowd to cheer and scream, or a sudden rainstorm causing people to seek shelter and then calm down once they're indoors. These examples illustrate how two events can be intertwined and influence each other.",
+      "concept": "bidirectional cause-and-effect relationships",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:22:44",
+    "context": {
+      "timestamp": "01:22:44",
+      "transcript_snippet": "So you're not like it's not gonna be increasing by drastically. ffcb0144-daed-473f-817a-762d10eeefd8/7282-0",
+      "slide_text": "Correlation Research Ven ty oSaves money and time oCan allow one to make predictions oAllows use of preexisting data PeyETTe NEV e:y.-< 79 oCan\u2019t establish CAUSE & EFFECT oProne to inaccurate reporting ( survey) oConfounding variables oCan\u2019t manipulate variables",
+      "visual_description": "Frame 1920x1080, brightness: 160.0, moderate visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "A researcher wants to investigate the relationship between the amount of time spent studying and exam scores. What are some potential limitations of using correlation research in this scenario?",
+      "type": "application",
+      "options": [],
+      "answer": "Correlation research can save money and time, allow for predictions based on preexisting data, but it cannot establish cause-and-effect relationships and is prone to inaccurate reporting due to confounding variables.",
+      "concept": "Limitations of Correlation Research",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:22:57",
+    "context": {
+      "timestamp": "01:22:57",
+      "transcript_snippet": "It means that population will go up, but it doesn't mean it will go up. ffcb0144-daed-473f-817a-762d10eeefd8/7296-0",
+      "slide_text": "Correlation Research een ty oSaves money and time oCan allow one to make predictions oAllows use of preexisting data PeyET-Te NV e-t.-1- 79 oCan\u2019t establish CAUSE & EFFECT oProne to inaccurate reporting ( survey) oConfounding variables oCan\u2019t manipulate variables",
+      "visual_description": "Frame 1920x1080, brightness: 160.0, moderate visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is a potential limitation of correlation research that prevents it from establishing cause-and-effect relationships?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation research cannot establish cause-and-effect relationships because it can be influenced by confounding variables, which are factors other than the one being studied.",
+      "concept": "cause-and-effect relationships",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:04:40",
+    "context": {
+      "timestamp": "00:04:40",
+      "transcript_snippet": "Yeah, like halfway through the halfway, like halfway the hell. The bad. That. ffcb0144-daed-473f-817a-762d10eeefd8/394-1",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 189.0, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What does it mean for two variables to be correlated, and how does correlation differ from causation?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation refers to the statistical relationship between two variables that tend to move together. However, correlation does not imply causation. In other words, just because two variables are correlated, it doesn't mean that one causes the other. There could be other factors at play, or the correlation might be coincidental. For example, if you notice a correlation between the number of ice cream sales and the temperature outside, it's likely due to the fact that people buy more ice cream when it's hot outside, not because ice cream directly affects the weather.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:19:11",
+    "context": {
+      "timestamp": "00:19:11",
+      "transcript_snippet": "Yeah, I can do it. Like when they settle in, ffcb0144-daed-473f-817a-762d10eeefd8/677-1",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 189.2, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the main difference between correlation and causation, and how can it be understood in real-world applications?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation refers to the statistical relationship between two variables that tend to change together, but it does not necessarily imply a cause-and-effect relationship. Causation, on the other hand, implies a direct causal link between two events or variables. Understanding correlation and causation is crucial in various fields like healthcare, autonomous driving, and smart manufacturing, where incorrect assumptions can lead to poor decision-making.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:26:07",
+    "context": {
+      "timestamp": "00:26:07",
+      "transcript_snippet": "So this graph basically shows the countries who consumes more chocolate are ffcb0144-daed-473f-817a-762d10eeefd8/1238-1",
+      "slide_text": "This slide is teaching about the countries that consume more chocolate. The main educational concept being taught is a comparison of chocolate consumption across different countries.",
+      "educational_content": "This slide is teaching about the countries that consume more chocolate. The main educational concept being taught is a comparison of chocolate consumption across different countries.",
+      "visual_description": "VLM Analysis: A bar chart showing the amount of chocolate consumed by various countries",
+      "visual_elements": [
+        "A bar chart showing the amount of chocolate consumed by various countries"
+      ],
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "VLM",
+      "quality_score": 9,
+      "content_quality": 9,
+      "key_concepts": [
+        "Chocolate Consumption",
+        "Country Comparison"
+      ]
+    },
+    "question": {
+      "text": "Which countries have the highest chocolate consumption per capita, according to the graph?",
+      "type": "factual",
+      "options": [],
+      "answer": "The countries with the highest chocolate consumption per capita are not explicitly stated in this slide. However, it is mentioned that the graph shows the countries who consume more chocolate.",
+      "concept": "comparing and identifying data on chocolate consumption across different countries",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:29:52",
+    "context": {
+      "timestamp": "00:29:52",
+      "transcript_snippet": "We're more likely to say, oh, that might be a UFO. ffcb0144-daed-473f-817a-762d10eeefd8/1619-0",
+      "slide_text": "UFO sightings in South Carolina correlates with Total Number of Successful Mount Everest Climbs 113 85 UFO sightings & SJAQuIIIO. I 1 1 1975 1981 1987 1993 1999 2005 2011 The aliens were big fans of extreme sports and decided to start an intergalactic Mount Everest fan club, providing secret technological assistance to climbers. Who knew that E.T. was an adrenaline junkie? hltns://vnw tylervigen com/spurious/correlation/2423_ufo-sightings-in-south-carolina correlates-with total-number-of-successful-mount-everest-climbsa",
+      "visual_description": "Frame 1920x1080, brightness: 148.3, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the correlation between UFO sightings in South Carolina and the number of successful Mount Everest climbs?",
+      "type": "factual",
+      "options": [],
+      "answer": "There is no scientific evidence to support a correlation between UFO sightings in South Carolina and the number of successful Mount Everest climbs. The data appears to be spurious, as suggested by the article <https://tylervigen.com/spurious/correlation/2423_ufo-sightings-in-south-carolina-correlates-with-total-number-of-successful-mount-everest-climbs/>. The aliens mentioned in the slide content are likely a humorous exaggeration and not based on factual evidence.",
+      "concept": "Correlation vs. Causation, Critical Thinking",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:30:10",
+    "context": {
+      "timestamp": "00:30:10",
+      "transcript_snippet": "but I'm withhelding some information which is a very important key that you ffcb0144-daed-473f-817a-762d10eeefd8/1647-2",
+      "slide_text": "UFO sightings in South Carolina correlates with Total Number of Successful Mount Everest Climbs 113 85 UFO sightings & SJAQuIIIO. I 1 1 1975 1981 1987 1993 1999 2005 2011 The aliens were big fans of extreme sports and decided to start an intergalactic Mount Everest fan club, providing secret technological assistance to climbers. Who knew that E.T. was an adrenaline junkie? hltns://vnw tylervigen com/spurious/correlation/2423_ufo-sightings-in-south-carolina correlates-with total-number-of-successful-mount-everest-climbsa",
+      "visual_description": "Frame 1920x1080, brightness: 148.4, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What type of correlation does the relationship between UFO sightings in South Carolina and successful Mount Everest climbs illustrate?",
+      "type": "factual",
+      "options": [],
+      "answer": "The relationship illustrates a spurious correlation, where two variables appear to be related but are actually unrelated due to chance or coincidence.",
+      "concept": "Correlation vs. Causation",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:31:40",
+    "context": {
+      "timestamp": "00:31:40",
+      "transcript_snippet": "It's like in the summer, more like the ice cream and you're more ffcb0144-daed-473f-817a-762d10eeefd8/1811-1",
+      "slide_text": "/ Ice Cream Sales & Shark Attacks",
+      "visual_description": "Frame 1920x1080, brightness: 187.0, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is typically considered as a seasonal indicator for ice cream sales?",
+      "type": "factual",
+      "options": [],
+      "answer": "Ice cream sales are often used as a barometer to gauge summer seasonality, with increased sales during warmer months.",
+      "concept": "Seasonal Indicators",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:31:44",
+    "context": {
+      "timestamp": "00:31:44",
+      "transcript_snippet": "likely to go to the beach. ffcb0144-daed-473f-817a-762d10eeefd8/1812-0",
+      "slide_text": "/ Ice Cream Sales & Shark Attacks",
+      "visual_description": "Frame 1920x1080, brightness: 187.0, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the typical time of year when ice cream sales are at their peak?",
+      "type": "factual",
+      "options": [],
+      "answer": "Ice cream sales tend to be higher during the summer months, particularly after a beach trip or event.",
+      "concept": "Seasonal Trends in Ice Cream Sales",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:33:57",
+    "context": {
+      "timestamp": "00:33:57",
+      "transcript_snippet": "As data drenching when we don't understand what the variables in our data. ffcb0144-daed-473f-817a-762d10eeefd8/2156-0",
+      "slide_text": "Why this works Data dredging: o | have 25,153 variables in my database. \u00a9 | compare all these variables against each other to find ones that randomly match up. That's 632,673,409 correlation calculations! \u00b0 \u00b0 This is called \u201cdata dredging.\u201d \u00b0 Instead of starting with a hypothesis and testing it, | instead abused the data to see what correlations shake out. fo} It\u2019s a dangerous way to go about analysis, because any sufficiently large dataset will yield strong correlations completely at random",
+      "visual_description": "Frame 1920x1080, brightness: 186.2, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the potential flaw in using data dredging, where large datasets are compared against each other to find correlations?",
+      "type": "factual",
+      "options": [],
+      "answer": "Data dredging can yield strong correlations that occur randomly due to chance, making it a dangerous approach to analysis. This method relies on comparing all variables against each other without starting with a hypothesis or testing, which increases the likelihood of finding false positives.",
+      "concept": "data dredging and its limitations",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:48:03",
+    "context": {
+      "timestamp": "00:48:03",
+      "transcript_snippet": "But there might be some variable Z, so if you remember the case of ice cream ffcb0144-daed-473f-817a-762d10eeefd8/3683-1",
+      "slide_text": "* Occurs when two events/measurements are correlated and the assumption is made that one causes the other; however, there is a \u201clurking\u201d variable that is actually contributes to the occurrence of both events/measurements. Belief: X causes Y Reality: Z causes both X and Y * Example: \u00b0 Bob notices that every time he has a temperature, he does not feel well. He reasons that because he has a high body temperature, this causes him to not feel well. Bob then jumps into an ice bath concluding that if he lowers his body temperature he will begin to feel better. \u00a9 Notice that both the high body temperature and Bob\u2019s not feeling well are results of him contracting the flu virus. The common cause here is the virus.",
+      "visual_description": "Frame 1920x1080, brightness: 152.5, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "A person notices that every time they eat ice cream, they experience stomach pain. They assume that eating ice cream causes stomach pain. However, there might be another variable at play. What is the underlying assumption in this scenario?",
+      "type": "conceptual",
+      "options": [],
+      "answer": "The assumption made by the person is that one event (eating ice cream) causes another event (stomach pain), without considering the possibility of a 'lurking' variable that may actually contribute to both events.",
+      "concept": "Correlation vs. Causation",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:50:02",
+    "context": {
+      "timestamp": "00:50:02",
+      "transcript_snippet": "Were more likely to develop short sightedness. ffcb0144-daed-473f-817a-762d10eeefd8/3934-0",
+      "slide_text": "Puzzle time 3: Can't you see the flaw? \u00ab Astudy from the University of Pennsylvania, published in the May 13, 1999 issue of Nature, that found babies younger than 2 years old who slept with a light on were at increased risk of developing myopia - nearsightedness - later in childhood. * In the current study of 1,220 children, Ohio State University researchers found no association between nighttime lighting and the development of nearsightedness. It didn't matter if the child had slept in a dark room, with a night light on or in a fully lit room. \u00ab What the researchers did find, however, was a strong link between nearsighted parents and nearsighted children.",
+      "visual_description": "Frame 1920x1080, brightness: 183.6, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What was found to be associated with an increased risk of developing nearsightedness in babies younger than 2 years old, according to a study published in Nature?",
+      "type": "factual",
+      "options": [],
+      "answer": "Sleeping with a light on",
+      "concept": "Association between nighttime lighting and nearsightedness",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:54:23",
+    "context": {
+      "timestamp": "00:54:23",
+      "transcript_snippet": "They are saying, OK, what is nature like? ffcb0144-daed-473f-817a-762d10eeefd8/4407-0",
+      "slide_text": "Puzzle time 3: Can't you see the flaw? \u00ab Astudy from the University of Pennsylvania, published in the May 13, 1999 issue of Nature, that found babies younger than 2 years old who slept with a light on were at increased risk of developing myopia - nearsightedness - later in childhood. * In the current study of 1,220 children, Ohio State University researchers found no association between nighttime lighting and the development of nearsightedness. It didn't matter if the child had slept in a dark room, with a night light on or in a fully lit room. \u00ab What the researchers did find, however, was a strong link between nearsighted parents and nearsighted children.",
+      "visual_description": "Frame 1920x1080, brightness: 183.8, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What was found by researchers at Ohio State University regarding the association between nighttime lighting and the development of nearsightedness in children?",
+      "type": "factual",
+      "options": [],
+      "answer": "According to a study of 1,220 children, Ohio State University researchers found no association between nighttime lighting and the development of nearsightedness. This contradicts previous findings from a study published in Nature, which suggested that babies under 2 years old who slept with a light on were at increased risk of developing myopia later in childhood.",
+      "concept": "Association between nighttime lighting and nearsightedness",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:54:40",
+    "context": {
+      "timestamp": "00:54:40",
+      "transcript_snippet": "It's not like a on a government webpage or an education web page like it is a ffcb0144-daed-473f-817a-762d10eeefd8/4450-1",
+      "slide_text": "Puzzle time 3: Can't you see the flaw? \u00ab Astudy from the University of Pennsylvania, published in the May 13, 1999 issue of Nature, that found babies younger than 2 years old who slept with a light on were at increased risk of developing myopia - nearsightedness - later in childhood. * In the current study of 1,220 children, Ohio State University researchers found no association between nighttime lighting and the development of nearsightedness. It didn't matter if the child had slept in a dark room, with a night light on or in a fully lit room. \u00ab What the researchers did find, however, was a strong link between nearsighted parents and nearsighted children.",
+      "visual_description": "Frame 1920x1080, brightness: 184.0, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What was found to be a potential risk factor for developing nearsightedness (myopia) in children under 2 years old, according to a study published in Nature?",
+      "type": "factual",
+      "options": [],
+      "answer": "Sleeping with a light on was found to increase the risk of developing nearsightedness in babies younger than 2 years old, as reported in a study from the University of Pennsylvania published in the May 13, 1999 issue of Nature.",
+      "concept": "Association between nighttime lighting and myopia development",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:56:17",
+    "context": {
+      "timestamp": "00:56:17",
+      "transcript_snippet": "That would be the easy path, but it's like path though like no, ffcb0144-daed-473f-817a-762d10eeefd8/4648-1",
+      "slide_text": "Puzzle time 3: Can't you see the flaw? \u00ab Astudy from the University of Pennsylvania, published in the May 13, 1999 issue of Nature, that found babies younger than 2 years old who slept with a light on were at increased risk of developing myopia - nearsightedness - later in childhood. \u00a2 In the current study of 1,220 children, Ohio State University researchers found no association between nighttime lighting and the development of nearsightedness. It didn't matter if the child had slept in a dark room, with a night light on or in a fully lit room. \u00ab What the researchers did find, however, was a strong link between nearsighted parents and nearsighted children.",
+      "visual_description": "Frame 1920x1080, brightness: 183.8, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What was found to be associated with an increased risk of developing nearsightedness (myopia) in babies younger than 2 years old, according to a study published in Nature?",
+      "type": "factual",
+      "options": [],
+      "answer": "Sleeping with a light on, as reported in a study from the University of Pennsylvania published in the May 13, 1999 issue of Nature.",
+      "concept": "Association between nighttime lighting and myopia development",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:57:45",
+    "context": {
+      "timestamp": "00:57:45",
+      "transcript_snippet": "likely to use Night Lights in their kids room. ffcb0144-daed-473f-817a-762d10eeefd8/4796-0",
+      "slide_text": "Puzzle time 3: Can't you see the flaw? Answer * The researchers noticed that nearsighted parents were more likely to use a nightlight in their child's room. \u00a2 \"We think this may be due to the parents\u2019 own poor eyesight,\" Zadnik said. * Zadnik said her study found that genetics plays a significant role in causing myopia. http://researchnews.osu.edu/archive/nitelite.htm",
+      "visual_description": "Frame 1920x1080, brightness: 188.5, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is one possible reason why nearsighted parents are more likely to use nightlights in their child's room?",
+      "type": "factual",
+      "options": [],
+      "answer": "One possible reason is that nearsighted parents may have difficulty seeing in low light conditions, leading them to rely on nightlights for their own children.",
+      "concept": "Genetics and eye sight",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:59:09",
+    "context": {
+      "timestamp": "00:59:09",
+      "transcript_snippet": "So sometimes you have heard statements like you will do better at work or school. ffcb0144-daed-473f-817a-762d10eeefd8/4979-1",
+      "slide_text": "* This fallacy occurs more often than the others in the media. * You may have heard of statements like: \u201cYou will do better at work/school if you have a good breakfast\u201d. \u00ab While this may be true on average, there are many causes that contribute to increased performance such as preparation, motivation, good health, etc Belief: A causes Z Realiy:A>Z&BOZ&COZ&DDOZ&ED Zetec... (Many factors cause Z)",
+      "visual_description": "Frame 1920x1080, brightness: 158.3, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What does the phrase 'While' indicate in the context of the breakfast statement, and what type of fallacy is it?",
+      "type": "factual",
+      "options": [],
+      "answer": "The phrase 'While' indicates that the statement about having a good breakfast improving performance may be true for some people, but it's not necessarily true for everyone. This is an example of the Correlation Does Not Imply Causation (CDIC) fallacy, which occurs when there is a correlation between two variables but no causal relationship.",
+      "concept": "Correlation Does Not Imply Causation (CDIC) and critical thinking",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:59:53",
+    "context": {
+      "timestamp": "00:59:53",
+      "transcript_snippet": "So the normal belief if you just want to put it in a hypothesis like a hypothesis. ffcb0144-daed-473f-817a-762d10eeefd8/5096-0",
+      "slide_text": "* This fallacy occurs more often than the others in the media. * You may have heard of statements like: \u201cYou will do better at work/school if you have a good breakfast\u201d. \u00ab While this may be true on average, there are many causes that contribute to increased performance such as preparation, motivation, good health, etc Belief: A causes Z Realiy:A>Z&BOZ&COZ&DDOZ&ED Zetec... (Many factors cause Z)",
+      "visual_description": "Frame 1920x1080, brightness: 158.2, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What type of reasoning is illustrated in the statement 'Many factors cause Z'?",
+      "type": "factual",
+      "options": [],
+      "answer": "This fallacy occurs more often than the others in the media. While this may be true on average, there are many causes that contribute to increased performance such as preparation, motivation, good health, etc. This statement illustrates a causal fallacy because it oversimplifies the relationship between A and Z by implying that A is the sole cause of Z.",
+      "concept": "Causal Fallacy",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:02:47",
+    "context": {
+      "timestamp": "01:02:47",
+      "transcript_snippet": "'Cause the shark attacks there are like multiple causes for the shark attacks ffcb0144-daed-473f-817a-762d10eeefd8/5304-1",
+      "slide_text": "* Can you think of any more examples of an oversimplified cause? \u00a2 What other events have many reasons for occurring?",
+      "visual_description": "Frame 1920x1080, brightness: 162.9, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "Analyze the relationship between shark attacks and their causes. What are some potential oversimplifications in understanding the reasons behind these events?",
+      "type": "application",
+      "options": [],
+      "answer": "There are many factors that contribute to shark attacks, such as human behavior (e.g., swimming in areas with known shark activity), environmental conditions (e.g., bait fish schools), and shark species characteristics (e.g., great whites are more aggressive). Oversimplifying the causes of shark attacks can lead to inaccurate conclusions about how to prevent them. For example, assuming that all shark attacks occur due to human error ignores the role of natural factors like ocean currents and water temperature.",
+      "concept": "Understanding complex causality and avoiding oversimplification",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:06:47",
+    "context": {
+      "timestamp": "01:06:47",
+      "transcript_snippet": "So this is called bidirectional cost. ffcb0144-daed-473f-817a-762d10eeefd8/5707-0",
+      "slide_text": "The slide is teaching the concept of 'bidirectional cost' in an educational setting. It explains that this cost can be calculated by considering both the number of events and their impact on education.",
+      "educational_content": "The slide is teaching the concept of 'bidirectional cost' in an educational setting. It explains that this cost can be calculated by considering both the number of events and their impact on education.",
+      "visual_description": "VLM Analysis: Bullet points outlining the components of bidirectional cost",
+      "visual_elements": [
+        "Bullet points outlining the components of bidirectional cost"
+      ],
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "VLM",
+      "quality_score": 9,
+      "content_quality": 9,
+      "key_concepts": [
+        "Bidirectional cost",
+        "Impact on education"
+      ]
+    },
+    "question": {
+      "text": "What does 'bidirectional cost' refer to in an educational setting, and how is it calculated?",
+      "type": "factual",
+      "options": [],
+      "answer": "Bidirectional cost refers to the total cost of events that occur both positively and negatively on education. It can be calculated by considering both the number of events and their impact on education.",
+      "concept": "Bidirectional Cost",
+      "difficulty": "Medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:08:59",
+    "context": {
+      "timestamp": "01:08:59",
+      "transcript_snippet": "And remember these causation, these oversimplified, bi directional. ffcb0144-daed-473f-817a-762d10eeefd8/5883-0",
+      "slide_text": "Question: Can you think of any other examples of bidirectional cause?",
+      "visual_description": "Frame 1920x1080, brightness: 164.0, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "Analyze the relationship between climate change and rising sea levels. How do these two phenomena impact each other, and what are some potential consequences of their bidirectional cause?",
+      "type": "application",
+      "options": [],
+      "answer": "Climate change and rising sea levels have a bidirectional cause. As greenhouse gas emissions increase due to human activities, they contribute to global warming, leading to melting of polar ice caps and glaciers. This, in turn, causes sea levels to rise as more water is released into the oceans. Conversely, as sea levels rise, coastal areas become more vulnerable to flooding and erosion, which can exacerbate climate change by releasing more carbon dioxide from thawing permafrost and ocean acidification. The consequences of this bidirectional cause include increased risk of coastal flooding, saltwater intrusion into freshwater sources, and loss of biodiversity.",
+      "concept": "Bidirectional cause and effect",
+      "difficulty": "hard"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:11:58",
+    "context": {
+      "timestamp": "01:11:58",
+      "transcript_snippet": "Let's say the Empire State Building or anything like that. ffcb0144-daed-473f-817a-762d10eeefd8/6127-0",
+      "slide_text": "Question: Can you think of any other examples of bidirectional cause?",
+      "visual_description": "Frame 1920x1080, brightness: 163.6, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What are some real-world examples of bidirectional cause in engineering or architecture, similar to the Empire State Building?",
+      "type": "application",
+      "options": [],
+      "answer": "Examples of bidirectional cause include suspension bridges like the Golden Gate Bridge or the Brooklyn Bridge, which both support traffic and provide a scenic view. Additionally, skyscrapers like the Burj Khalifa or the Shanghai Tower, which serve as iconic landmarks while also providing functional space for their occupants.",
+      "concept": "bidirectional cause",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:12:34",
+    "context": {
+      "timestamp": "01:12:34",
+      "transcript_snippet": "You just got tariffs and inflation. So explain it to me because, like, ffcb0144-daed-473f-817a-762d10eeefd8/6201-1",
+      "slide_text": "Question: Can you think of any other examples of bidirectional cause?",
+      "visual_description": "Frame 1920x1080, brightness: 163.7, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What are some real-world examples of bidirectional cause-and-effect relationships, where one event leads to another, which in turn affects the first event?",
+      "type": "application",
+      "options": [],
+      "answer": "A classic example of a bidirectional cause-and-effect relationship is the relationship between population growth and urbanization. As cities grow in population, they can lead to increased demand for housing, transportation, and services, which in turn can attract more people to the city, causing it to continue growing. Similarly, as cities grow, they can also lead to environmental degradation, pollution, and strain on resources, which can discourage people from moving to the city, leading to a decline in population growth. Another example is the relationship between climate change and extreme weather events. As global temperatures rise due to climate change, we can expect more frequent and severe heatwaves, droughts, and storms, which can lead to increased migration of people to coastal areas or higher elevations, straining local resources and infrastructure.",
+      "concept": "Bidirectional cause-and-effect relationships",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:13:01",
+    "context": {
+      "timestamp": "01:13:01",
+      "transcript_snippet": "So it's it's like the China American chat, the tariffs they're doing. ffcb0144-daed-473f-817a-762d10eeefd8/6257-0",
+      "slide_text": "Question: Can you think of any other examples of bidirectional cause?",
+      "visual_description": "Frame 1920x1080, brightness: 163.8, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What type of cause is represented by tariffs imposed on Chinese goods by the US government, in relation to trade relationships between China and the US?",
+      "type": "application",
+      "options": [],
+      "answer": "Tariffs imposed on Chinese goods by the US government are an example of a bidirectional cause because they affect both the supply of goods from China to the US market (reduced availability) and the demand for those goods in the US market (decreased demand).",
+      "concept": "Bidirectional Cause",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "01:24:48",
+    "context": {
+      "timestamp": "01:24:48",
+      "transcript_snippet": "But it's not like it's not a 'cause that the population grew up. ffcb0144-daed-473f-817a-762d10eeefd8/7530-0",
+      "slide_text": "Correlation Research eVect oSaves money and time oCan allow one to make predictions oAllows use of preexisting data PeyET-Te NV e-y.-< 79 oCan\u2019t establish CAUSE & EFFECT oProne to inaccurate reporting ( survey) oConfounding variables oCan\u2019t manipulate variables",
+      "visual_description": "Frame 1920x1080, brightness: 160.4, moderate visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "Analyze the limitations of correlation research in making predictions about population growth. Provide an example of how correlation research can be used, despite its limitations.",
+      "type": "application",
+      "options": [],
+      "answer": "Correlation research is often used to identify patterns between variables, such as the relationship between income and crime rates. However, it cannot establish cause-and-effect relationships, which means that correlation does not necessarily imply causation. For instance, a study might find a strong positive correlation between the number of hours spent watching TV and obesity rates in a population. While this suggests that watching TV may be associated with increased obesity, it does not mean that watching TV causes obesity. In fact, other factors like diet and exercise habits are likely to play a much larger role. Despite these limitations, correlation research can still provide valuable insights into relationships between variables and allow for the use of preexisting data, which can save time and money. Additionally, correlation research can sometimes be used to make predictions about future trends or patterns, such as predicting population growth based on demographic changes.",
+      "concept": "Limitations of Correlation Research",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:04:45",
+    "context": {
+      "timestamp": "00:04:45",
+      "transcript_snippet": "Yeah. What is it? Is how much do you have with? ffcb0144-daed-473f-817a-762d10eeefd8/398-0",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 188.9, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the main difference between correlation and causation in statistical analysis?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation does not imply causation. Correlation refers to the statistical relationship between two variables, while causation implies a direct cause-and-effect relationship between them. For example, just because two variables are correlated, it doesn't mean that one variable causes the other.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:04:49",
+    "context": {
+      "timestamp": "00:04:49",
+      "transcript_snippet": "Like sure, say now, purple page we now. ffcb0144-daed-473f-817a-762d10eeefd8/407-0",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 188.9, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the main difference between correlation and causation, and how can we identify it in real-world data?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation refers to the statistical relationship between two variables, while causation implies a direct cause-and-effect relationship. To identify if correlation implies causation, look for factors such as temporal order, consistency across different datasets, and the presence of a plausible mechanism linking the variables.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:19:07",
+    "context": {
+      "timestamp": "00:19:07",
+      "transcript_snippet": "And you're like, OK. ffcb0144-daed-473f-817a-762d10eeefd8/677-0",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 189.5, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the key difference between correlation and causation, and how can we identify it in real-world data?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation does not imply causation. Correlation refers to a statistical relationship between two variables, where changes in one variable are associated with changes in another variable. However, correlation alone cannot establish causality. Causation implies that one variable directly affects the other variable. To identify causation, we need to consider additional factors such as temporal relationships, statistical significance, and experimental evidence.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:21:17",
+    "context": {
+      "timestamp": "00:21:17",
+      "transcript_snippet": "So how many of you have heard this term before? Correlation is non causation. ffcb0144-daed-473f-817a-762d10eeefd8/783-0",
+      "slide_text": "The slide is teaching the concept of correlation not causation. It explains that correlation refers to a relationship between two variables where one variable increases or decreases as the other variable does, but it doesn't necessarily mean that one causes the other.",
+      "educational_content": "The slide is teaching the concept of correlation not causation. It explains that correlation refers to a relationship between two variables where one variable increases or decreases as the other variable does, but it doesn't necessarily mean that one causes the other.",
+      "visual_description": "VLM Analysis: There are no visual elements like diagrams, charts, equations, or bullet points in this frame.",
+      "visual_elements": [
+        "There are no visual elements like diagrams, charts, equations, or bullet points in this frame."
+      ],
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "VLM",
+      "quality_score": 7,
+      "content_quality": 7,
+      "key_concepts": [
+        "Correlation",
+        "Causation"
+      ]
+    },
+    "question": {
+      "text": "What does the term 'correlation does not imply causation' mean in the context of variables, and provide an example to illustrate this concept?",
+      "type": "factual",
+      "options": [],
+      "answer": "The term 'correlation does not imply causation' means that just because two variables are related or tend to change together, it doesn't necessarily mean that one causes the other. For instance, consider the relationship between the number of ice cream cones sold at a store and the temperature outside. If you notice an increase in ice cream cone sales on hot days, it's possible that people are buying more ice cream as a treat due to the warm weather, rather than because the temperature directly causes them to buy more cones.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:21:50",
+    "context": {
+      "timestamp": "00:21:50",
+      "transcript_snippet": "and then we'll have a puzzle or, like a game session. ffcb0144-daed-473f-817a-762d10eeefd8/852-0",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 189.0, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What does it mean for two variables to be correlated, but not necessarily cause each other?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation refers to a statistical relationship between two variables that tend to increase or decrease together. However, correlation does not imply causation, meaning that just because two variables are correlated, it doesn't necessarily mean that one causes the other. There could be other factors at play, such as shared underlying causes or coincidental patterns.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:23:20",
+    "context": {
+      "timestamp": "00:23:20",
+      "transcript_snippet": "We should like you to come forward to me. ffcb0144-daed-473f-817a-762d10eeefd8/1004-0",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 189.1, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the main difference between correlation and causation in statistical analysis?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation does not imply causation. Correlation measures the strength and direction of a linear relationship between two variables, but it does not necessarily mean that one variable causes the other. In other words, just because two variables are highly correlated, it doesn't mean that changing one variable will automatically change the other.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "easy"
+    },
+    "quality_score": 9
+  },
+  {
+    "timestamp": "00:23:50",
+    "context": {
+      "timestamp": "00:23:50",
+      "transcript_snippet": "Gooners don't like that, no? ffcb0144-daed-473f-817a-762d10eeefd8/1040-0",
+      "slide_text": "Correlation is not Causation Utkarshani Jaimini, Ph.D. Candidate Research areas: Causal Al, Knowledge graph, Neuro-symbolic Al, Healthcare, Autonomous Driving, Smart Manufacturing Email: ujaimini@email.sc.edu",
+      "visual_description": "Frame 1920x1080, brightness: 188.9, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What does it mean for two variables to be correlated, but not necessarily cause each other?",
+      "type": "factual",
+      "options": [],
+      "answer": "Correlation refers to a statistical relationship between two variables, where changes in one variable are associated with changes in the other. However, correlation does not imply causation, meaning that just because two variables are related, it doesn't mean that one causes the other. There could be other factors at play or alternative explanations for the observed relationship.",
+      "concept": "Correlation vs Causation",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:27:08",
+    "context": {
+      "timestamp": "00:27:08",
+      "transcript_snippet": "So another now I have a graph. I have a data to support it and it says ffcb0144-daed-473f-817a-762d10eeefd8/1342-1",
+      "slide_text": "The image appears to be a screenshot of a presentation slide, likely from an educational video lecture. The main educational concept being taught is related to data analysis or visualization, as evidenced by the presence of a graph and accompanying text.",
+      "educational_content": "The image appears to be a screenshot of a presentation slide, likely from an educational video lecture. The main educational concept being taught is related to data analysis or visualization, as evidenced by the presence of a graph and accompanying text.",
+      "visual_description": "VLM Analysis: A graph with a line chart showing some form of data over time",
+      "visual_elements": [
+        "A graph with a line chart showing some form of data over time"
+      ],
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "VLM",
+      "quality_score": 8,
+      "content_quality": 8,
+      "key_concepts": [
+        "Data Analysis",
+        "Graph Visualization",
+        "Trend Analysis"
+      ]
+    },
+    "question": {
+      "text": "What type of data visualization technique is represented in the graph shown in the presentation slide?",
+      "type": "factual",
+      "options": [],
+      "answer": "The image appears to be a screenshot of a presentation slide, likely from an educational video lecture. The main educational concept being taught is related to data analysis or visualization, as evidenced by the presence of a graph and accompanying text. This suggests that the technique depicted is a form of data visualization, such as bar chart, line graph, or scatter plot.",
+      "concept": "Data Visualization",
+      "difficulty": "easy"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:27:13",
+    "context": {
+      "timestamp": "00:27:13",
+      "transcript_snippet": "number of people who drown by falling into a swimming pool is correlated with ffcb0144-daed-473f-817a-762d10eeefd8/1342-2",
+      "slide_text": "correlates with Tiel molto) Bvt melee vine Me mele eek MOTT aL be Lele) = Number of films Niclas Cage appeared in a = re = i a fa 1999 lief) 2001 plil7J pli) pail) lie) Plt yl) yii)t5-) 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 Number people who drowned by falling into a swimming-pool 499 4102 102 98 85 95 96 98 123 94 102 Deaths (US) (COC) Number of films Nicolas Cage appeared in oppeoredin 9 2 2 3 1 1 2 3 4 \u00ab1 \u00ab4 Correlation: 0.666004",
+      "visual_description": "Frame 1920x1080, brightness: 133.3, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What is the relationship between the number of films Nicolas Cage appeared in and the number of people who drowned by falling into swimming pools?",
+      "type": "factual",
+      "options": [],
+      "answer": "The correlation coefficient between the two variables is 0.666004, indicating a moderate positive linear relationship.",
+      "concept": "Correlation and Linear Relationship",
+      "difficulty": "medium"
+    },
+    "quality_score": 8
+  },
+  {
+    "timestamp": "00:28:19",
+    "context": {
+      "timestamp": "00:28:19",
+      "transcript_snippet": "Because if you could go into the lecture, obviously you're doing something else in ffcb0144-daed-473f-817a-762d10eeefd8/1459-1",
+      "slide_text": "Me: *Quits going to lecture, only uses outside resources and grades go up* O77 28800",
+      "visual_description": "Frame 1920x1080, brightness: 150.2, simple visual content",
+      "frame_width": 1920,
+      "frame_height": 1080,
+      "extraction_method": "OCR"
+    },
+    "question": {
+      "text": "What are some potential benefits of using alternative resources, such as online materials or outside readings, in addition to attending lectures?",
+      "type": "conceptual",
+      "options": [],
+      "answer": "Using alternative resources, such as online materials or outside readings, can help students engage more actively with course content, take ownership of their learning, and develop critical thinking skills. This approach can also allow students to work at their own pace and review material as needed. As a result, grades may increase when students are able to apply what they've learned in a more self-directed way.",
+      "concept": "Self-Directed Learning",
+      "difficulty": "medium"
+    },
+    "quality_score": 9
+  }
+]

@@ -1,0 +1,137 @@
+[
+    {
+        "id": "1",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        },
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "10"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {
+        "id": "2",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {
+        "id": "3",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {   
+        "id": "4",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {   
+        "id": "5",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {
+        "id": "6",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {
+        "id": "7",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {
+        "id": "8",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {
+        "id": "9",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    },
+    {
+        "id": "10",
+        "title": "d1s1",
+        "questions": [
+        {
+            "question": "What is JSX?",
+            "questionAnswers": ["JavaScript XML", "Java Syntax", "JSON", "None of the above"],
+            "timeStamp": "5"
+        }
+        ],
+        "thumbnailFileName": "assets/img/D1S1thumbnail.png",
+        "vidFidName": "assets/vid/d1s1.mp4"
+    }
+]

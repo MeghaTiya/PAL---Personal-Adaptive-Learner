@@ -1,0 +1,12 @@
+{
+  "studentId": "student-123",
+  "performance": [
+    { "conceptId": "c1", "status": "correct" },
+    { "conceptId": "c2", "status": "wrong" },
+    { "conceptId": "c3", "status": "wrong" },
+    { "conceptId": "c4", "status": "correct" },
+    { "conceptId": "c5", "status": "correct" },
+    { "conceptId": "c6", "status": "correct" },
+    { "conceptId": "c7", "status": "correct" }
+  ]
+}
