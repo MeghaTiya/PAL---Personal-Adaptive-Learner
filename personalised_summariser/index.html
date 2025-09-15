@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Learning Compass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="starfield"></div>
+
+    <!-- The entire app is now a single, focused view -->
+    <main id="debrief-view">
+        <header>
+            <h1 id="debrief-title"></h1>
+            <p>Navigating today's key concepts.</p>
+        </header>
+        <div id="compass-container">
+             <!-- The Learning Compass will be built here by JavaScript -->
+             <!-- Placeholder for a clean loading state -->
+            <div class="compass-placeholder"></div>
+        </div>
+        <section id="review-section" class="summary-section">
+            <h2><i class="fa-solid fa-star-of-life"></i> Discovery Zone</h2>
+            <div class="accordion-container" id="review-accordion"></div>
+        </section>
+        <section id="strengths-section" class="summary-section">
+            <h2><i class="fa-solid fa-flag-checkered"></i> Territory Mastered</h2>
+            <div class="accordion-container" id="strengths-accordion"></div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAL RL Integration Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .algorithm-selector {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .algorithm-btn {
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .algorithm-btn.active {
+            background: #007bff;
+            color: white;
+        }
+        .test-results {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .decision-log {
+            max-height: 300px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 PAL RL Integration Test</h1>
+        <p>This page demonstrates the RL-enhanced PAL system with interpretable decision-making.</p>
+        
+        <div class="test-section">
+            <h3>Algorithm Selection</h3>
+            <div class="algorithm-selector">
+                <button class="algorithm-btn" onclick="selectAlgorithm('statistical')">Statistical</button>
+                <button class="algorithm-btn" onclick="selectAlgorithm('rl')">Pure RL</button>
+                <button class="algorithm-btn active" onclick="selectAlgorithm('hybrid')">Hybrid RL</button>
+            </div>
+            <p><strong>Current Algorithm:</strong> <span id="currentAlgorithm">Hybrid RL</span></p>
+        </div>
+
+        <div class="test-section">
+            <h3>Simulation Controls</h3>
+            <button onclick="startSimulation()">Start Simulation</button>
+            <button onclick="resetSimulation()">Reset</button>
+            <button onclick="loadDataset()">Load Dataset</button>
+            <p><strong>Status:</strong> <span id="simulationStatus">Ready</span></p>
+        </div>
+
+        <div class="test-section">
+            <h3>Performance Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalQuestions">0</div>
+                    <div class="stat-label">Questions Answered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="accuracy">0%</div>
+                    <div class="stat-label">Overall Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="avgResponseTime">0s</div>
+                    <div class="stat-label">Avg Response Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="skillScore">50</div>
+                    <div class="stat-label">Skill Score</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>Algorithm Decision Log</h3>
+            <div class="decision-log" id="decisionLog">No decisions yet...</div>
+        </div>
+
+        <div class="test-section">
+            <h3>RL Analytics</h3>
+            <div class="test-results" id="rlAnalytics">No RL data available</div>
+        </div>
+    </div>
+
+    <!-- Load the RL algorithms -->
+    <script src="src/algorithms/time_streak_confidence.js"></script>
+    <script src="src/algorithms/rl_adaptive_learning.js"></script>
+    <script src="src/algorithms/hybrid_adaptive_learning.js"></script>
+    <script src="src/utils/dataset_loader.js"></script>
+
+    <script>
+        // Test configuration
+        let currentAlgorithm = 'hybrid';
+        let simulationData = {
+            questions: [],
+            currentIndex: 0,
+            stats: {
+                total: 0,
+                correct: 0,
+                responseTimes: [],
+                skillScore: 50
+            },
+            learnerProfile: {
+                responseTime: [],
+                difficultyHistory: [],
+                accuracyByDifficulty: { Easy: [], Medium: [], Hard: [] },
+                consecutiveCorrect: 0,
+                consecutiveWrong: 0,
+                learningVelocity: 0,
+                confidenceLevel: 0.5,
+                adaptationRate: 0.5,
+                questionStartTime: null
+            }
+        };
+
+        // Algorithm selection
+        function selectAlgorithm(algorithm) {
+            currentAlgorithm = algorithm;
+            document.getElementById('currentAlgorithm').textContent = 
+                algorithm === 'hybrid' ? 'Hybrid RL' : 
+                algorithm === 'rl' ? 'Pure RL' : 'Statistical';
+            
+            // Update button states
+            document.querySelectorAll('.algorithm-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            updateRLAnalytics();
+        }
+
+        // Load dataset
+        async function loadDataset() {
+            try {
+                const response = await fetch('data/PAL AAAI 26 Demo Questions Aug 29 2025.json');
+                const data = await response.json();
+                
+                // Convert dataset to PAL format
+                if (window.PALDataset) {
+                    const lessonData = window.PALDataset.buildLessonDataFromDataset(data, { segmentCount: 10 });
+                    simulationData.questions = lessonData.questions;
+                    document.getElementById('simulationStatus').textContent = 
+                        `Dataset loaded: ${simulationData.questions.length} questions`;
+                } else {
+                    // Fallback: create simple questions
+                    simulationData.questions = createFallbackQuestions();
+                    document.getElementById('simulationStatus').textContent = 
+                        `Fallback questions created: ${simulationData.questions.length} questions`;
+                }
+            } catch (error) {
+                console.error('Failed to load dataset:', error);
+                simulationData.questions = createFallbackQuestions();
+                document.getElementById('simulationStatus').textContent = 
+                    `Fallback questions created: ${simulationData.questions.length} questions`;
+            }
+        }
+
+        // Create fallback questions for testing
+        function createFallbackQuestions() {
+            return [
+                {
+                    timestamp: 10,
+                    Easy: { q: "What is 2+2?", options: ["3", "4", "5"], answer: "4" },
+                    Medium: { q: "What is 12*8?", options: ["96", "108", "112"], answer: "96" },
+                    Hard: { q: "What is 15²?", options: ["215", "225", "235"], answer: "225" }
+                },
+                {
+                    timestamp: 20,
+                    Easy: { q: "What color is the sky?", options: ["Blue", "Red", "Green"], answer: "Blue" },
+                    Medium: { q: "What is the capital of France?", options: ["Rome", "Paris", "Berlin"], answer: "Paris" },
+                    Hard: { q: "Solve for x: 2x+5=15", options: ["3", "4", "5"], answer: "5" }
+                },
+                {
+                    timestamp: 30,
+                    Easy: { q: "How many days in a week?", options: ["6", "7", "8"], answer: "7" },
+                    Medium: { q: "What is 144 ÷ 12?", options: ["11", "12", "13"], answer: "12" },
+                    Hard: { q: "What is the derivative of x²?", options: ["x", "2x", "x²"], answer: "2x" }
+                }
+            ];
+        }
+
+        // Start simulation
+        function startSimulation() {
+            if (simulationData.questions.length === 0) {
+                alert('Please load dataset first');
+                return;
+            }
+
+            document.getElementById('simulationStatus').textContent = 'Running simulation...';
+            simulationData.currentIndex = 0;
+            simulationData.stats = {
+                total: 0,
+                correct: 0,
+                responseTimes: [],
+                skillScore: 50
+            };
+            simulationData.learnerProfile = {
+                responseTime: [],
+                difficultyHistory: [],
+                accuracyByDifficulty: { Easy: [], Medium: [], Hard: [] },
+                consecutiveCorrect: 0,
+                consecutiveWrong: 0,
+                learningVelocity: 0,
+                confidenceLevel: 0.5,
+                adaptationRate: 0.5,
+                questionStartTime: null
+            };
+
+            // Reset algorithms
+            if (window.PALRLAlgorithm && window.PALRLAlgorithm.resetAgent) {
+                window.PALRLAlgorithm.resetAgent();
+            }
+            if (window.PALHybridAlgorithm && window.PALHybridAlgorithm.reset) {
+                window.PALHybridAlgorithm.reset();
+            }
+
+            runNextQuestion();
+        }
+
+        // Run next question in simulation
+        function runNextQuestion() {
+            if (simulationData.currentIndex >= simulationData.questions.length) {
+                document.getElementById('simulationStatus').textContent = 'Simulation complete!';
+                return;
+            }
+
+            const questionData = simulationData.questions[simulationData.currentIndex];
+            
+            // Get difficulty selection from algorithm
+            const state = {
+                skillScore: simulationData.stats.skillScore,
+                streak: simulationData.learnerProfile.consecutiveCorrect,
+                lastDifficulty: simulationData.learnerProfile.difficultyHistory.length > 0 ? 
+                    simulationData.learnerProfile.difficultyHistory[simulationData.learnerProfile.difficultyHistory.length - 1].difficulty : 'Easy',
+                learnerProfile: simulationData.learnerProfile
+            };
+
+            let selectedDifficulty;
+            if (currentAlgorithm === 'hybrid' && window.PALHybridAlgorithm) {
+                selectedDifficulty = window.PALHybridAlgorithm.getNextDifficulty({ state });
+            } else if (currentAlgorithm === 'rl' && window.PALRLAlgorithm) {
+                selectedDifficulty = window.PALRLAlgorithm.getNextDifficulty({ state });
+            } else {
+                // Statistical fallback
+                if (state.skillScore <= 30) selectedDifficulty = 'Easy';
+                else if (state.skillScore <= 70) selectedDifficulty = 'Medium';
+                else selectedDifficulty = 'Hard';
+            }
+
+            const question = questionData[selectedDifficulty];
+            if (!question) {
+                selectedDifficulty = 'Medium';
+                const question = questionData[selectedDifficulty];
+            }
+
+            // Simulate answer (80% accuracy, random response time)
+            const correct = Math.random() < 0.8;
+            const responseTime = 2000 + Math.random() * 6000; // 2-8 seconds
+
+            // Update stats
+            simulationData.stats.total++;
+            if (correct) simulationData.stats.correct++;
+            simulationData.stats.responseTimes.push(responseTime);
+
+            // Update learner profile
+            simulationData.learnerProfile.responseTime.push(responseTime);
+            if (simulationData.learnerProfile.responseTime.length > 10) {
+                simulationData.learnerProfile.responseTime.shift();
+            }
+
+            simulationData.learnerProfile.difficultyHistory.push({
+                difficulty: selectedDifficulty,
+                correct: correct,
+                responseTime: responseTime,
+                scoreChange: correct ? (selectedDifficulty === 'Easy' ? 2 : selectedDifficulty === 'Medium' ? 5 : 8) : 
+                           (selectedDifficulty === 'Easy' ? -2 : selectedDifficulty === 'Medium' ? -4 : -6)
+            });
+
+            if (simulationData.learnerProfile.difficultyHistory.length > 15) {
+                simulationData.learnerProfile.difficultyHistory.shift();
+            }
+
+            simulationData.learnerProfile.accuracyByDifficulty[selectedDifficulty].push(correct);
+            if (simulationData.learnerProfile.accuracyByDifficulty[selectedDifficulty].length > 8) {
+                simulationData.learnerProfile.accuracyByDifficulty[selectedDifficulty].shift();
+            }
+
+            // Update skill score
+            if (correct) {
+                const increment = { Easy: 2, Medium: 5, Hard: 8 }[selectedDifficulty];
+                simulationData.stats.skillScore += increment;
+                simulationData.learnerProfile.consecutiveCorrect++;
+                simulationData.learnerProfile.consecutiveWrong = 0;
+            } else {
+                const decrement = { Easy: 2, Medium: 4, Hard: 6 }[selectedDifficulty];
+                simulationData.stats.skillScore -= decrement;
+                simulationData.learnerProfile.consecutiveWrong++;
+                simulationData.learnerProfile.consecutiveCorrect = 0;
+            }
+
+            simulationData.stats.skillScore = Math.max(0, Math.min(simulationData.stats.skillScore, 100));
+
+            // Update algorithms
+            if (currentAlgorithm === 'hybrid' && window.PALHybridAlgorithm) {
+                window.PALHybridAlgorithm.updateProfileAfterAnswer(state, correct, selectedDifficulty, responseTime);
+            } else if (currentAlgorithm === 'rl' && window.PALRLAlgorithm) {
+                window.PALRLAlgorithm.updateProfileAfterAnswer(state, correct, selectedDifficulty, responseTime);
+            }
+
+            // Log decision
+            logDecision(selectedDifficulty, correct, responseTime);
+
+            // Update UI
+            updateStats();
+            updateRLAnalytics();
+
+            simulationData.currentIndex++;
+            
+            // Continue simulation
+            setTimeout(runNextQuestion, 100);
+        }
+
+        // Log decision for interpretability
+        function logDecision(difficulty, correct, responseTime) {
+            const log = document.getElementById('decisionLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const result = correct ? '✓' : '✗';
+            const time = (responseTime / 1000).toFixed(1) + 's';
+            
+            let explanation = '';
+            if (currentAlgorithm === 'hybrid' && window.PALHybridAlgorithm) {
+                const exp = window.PALHybridAlgorithm.getDecisionExplanation();
+                if (exp) explanation = ` | ${exp.reasoning}`;
+            } else if (currentAlgorithm === 'rl' && window.PALRLAlgorithm) {
+                const exp = window.PALRLAlgorithm.getDecisionExplanation();
+                if (exp) explanation = ` | ${exp.reasoning}`;
+            }
+            
+            const logEntry = `Q${simulationData.stats.total}: ${difficulty} ${result} (${time}) | Score: ${simulationData.stats.skillScore}${explanation}\n`;
+            log.textContent = logEntry + log.textContent;
+            
+            // Keep only last 50 entries
+            const lines = log.textContent.split('\n');
+            if (lines.length > 50) {
+                log.textContent = lines.slice(0, 50).join('\n');
+            }
+        }
+
+        // Update statistics display
+        function updateStats() {
+            document.getElementById('totalQuestions').textContent = simulationData.stats.total;
+            document.getElementById('accuracy').textContent = 
+                simulationData.stats.total > 0 ? 
+                Math.round((simulationData.stats.correct / simulationData.stats.total) * 100) + '%' : '0%';
+            
+            const avgTime = simulationData.stats.responseTimes.length > 0 ?
+                simulationData.stats.responseTimes.reduce((a, b) => a + b, 0) / simulationData.stats.responseTimes.length : 0;
+            document.getElementById('avgResponseTime').textContent = (avgTime / 1000).toFixed(1) + 's';
+            document.getElementById('skillScore').textContent = simulationData.stats.skillScore;
+        }
+
+        // Update RL analytics
+        function updateRLAnalytics() {
+            const analyticsDiv = document.getElementById('rlAnalytics');
+            let analytics = '';
+
+            if (currentAlgorithm === 'hybrid' && window.PALHybridAlgorithm) {
+                const stats = window.PALHybridAlgorithm.getHybridStats();
+                const explanation = window.PALHybridAlgorithm.getDecisionExplanation();
+                
+                analytics = `Hybrid RL Algorithm Stats:
+Decision Count: ${stats.decisionCount}
+Current RL Weight: ${stats.currentRLWeight}
+Last Decision: ${explanation ? explanation.finalDecision : 'N/A'}
+Reasoning: ${explanation ? explanation.reasoning : 'N/A'}
+
+Recent Blending History:
+${stats.blendingHistory.map(h => `  ${h.decision} (${h.weights}) - ${h.reasoning}`).join('\n')}`;
+
+            } else if (currentAlgorithm === 'rl' && window.PALRLAlgorithm) {
+                const stats = window.PALRLAlgorithm.getLearningStats();
+                const explanation = window.PALRLAlgorithm.getDecisionExplanation();
+                
+                analytics = `Pure RL Algorithm Stats:
+Total Decisions: ${stats.totalDecisions}
+Average Q-Value: ${stats.averageQValue}
+Exploration Rate: ${stats.explorationRate}
+Memory Size: ${stats.memorySize}
+
+Q-Values: ${explanation ? `E:${explanation.qValues.Easy} M:${explanation.qValues.Medium} H:${explanation.qValues.Hard}` : 'N/A'}
+Last Decision: ${explanation ? explanation.selectedDifficulty : 'N/A'}
+Reasoning: ${explanation ? explanation.reasoning : 'N/A'}
+
+Recent Decisions:
+${stats.recentDecisions.map(d => `  ${d.action} (Q:${d.qValue}) - ${d.reasoning}`).join('\n')}`;
+
+            } else {
+                analytics = 'Statistical Algorithm (No RL data available)';
+            }
+
+            analyticsDiv.textContent = analytics;
+        }
+
+        // Reset simulation
+        function resetSimulation() {
+            simulationData.currentIndex = 0;
+            simulationData.stats = {
+                total: 0,
+                correct: 0,
+                responseTimes: [],
+                skillScore: 50
+            };
+            simulationData.learnerProfile = {
+                responseTime: [],
+                difficultyHistory: [],
+                accuracyByDifficulty: { Easy: [], Medium: [], Hard: [] },
+                consecutiveCorrect: 0,
+                consecutiveWrong: 0,
+                learningVelocity: 0,
+                confidenceLevel: 0.5,
+                adaptationRate: 0.5,
+                questionStartTime: null
+            };
+
+            document.getElementById('simulationStatus').textContent = 'Ready';
+            document.getElementById('decisionLog').textContent = 'No decisions yet...';
+            updateStats();
+            updateRLAnalytics();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDataset();
+            updateRLAnalytics();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📺 Adaptive Video Learning</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        
+        .video-container {
+            position: relative;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .question-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .question-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        
+        .question-title {
+            color: #1f2937;
+            margin: 0 0 16px 0;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        .question-text {
+            color: #4b5563;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .option-button {
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+        }
+        
+        .option-button:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+        }
+        
+        .option-button.selected {
+            border-color: #3b82f6;
+            background: #dbeafe;
+        }
+        
+        .submit-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin: 16px 8px 8px 8px;
+        }
+        
+        .submit-btn:hover {
+            background: #2563eb;
+        }
+        
+        .submit-btn:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .skip-btn {
+            background: transparent;
+            color: #6b7280;
+            border: 1px solid #d1d5db;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 8px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 16px;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981, #059669);
+            transition: width 0.3s;
+        }
+        
+        .feedback {
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-weight: 500;
+        }
+        
+        .feedback.correct {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        
+        .feedback.incorrect {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        
+        .difficulty-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .difficulty-easy {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        
+        .difficulty-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .difficulty-hard {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        
+        .completion {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .completion h2 {
+            color: #059669;
+            margin-bottom: 16px;
+        }
+        
+        .lesson-selector {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .lesson-selector h3 {
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+        
+        .lesson-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .lesson-btn {
+            padding: 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .lesson-btn:hover {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        .lesson-btn.active {
+            border-color: #3b82f6;
+            background: #dbeafe;
+        }
+        
+        .lesson-btn small {
+            color: #6b7280;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        
+        .start-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .analytics-panel {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        
+        .analytics-panel h4 {
+            margin: 0 0 16px 0;
+            color: #1f2937;
+            text-align: center;
+        }
+        
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+        
+        .analytics-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .analytics-label {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        
+        .analytics-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adaptive Video Learning</h1>
+        
+        <div class="lesson-selector" id="lessonSelector">
+            <h3>Choose Your Lesson:</h3>
+            <div class="lesson-buttons">
+                <button class="lesson-btn active" onclick="selectLesson(0)">
+                    📊 Mathematics Fundamentals
+                    <small>5 questions • Adaptive difficulty</small>
+                </button>
+                <button class="lesson-btn" onclick="selectLesson(1)">
+                    🔬 Advanced Mathematics  
+                    <small>2 questions • Challenge mode</small>
+                </button>
+                <button class="lesson-btn" onclick="selectLesson(2)">
+                    🧪 Science Basics
+                    <small>2 questions • General knowledge</small>
+                </button>
+            </div>
+            <button class="start-btn" onclick="startLesson()">Start Learning! 🚀</button>
+            <div style="margin-top:10px;color:#6b7280;font-size:12px">
+                Mode:
+                <label style="margin-left:8px"><input type="radio" name="mode" value="auto" id="modeAuto"> Auto</label>
+                <label style="margin-left:8px"><input type="radio" name="mode" value="baseline" id="modeBaseline"> Baseline</label>
+                <label style="margin-left:8px"><input type="radio" name="mode" value="enhanced" id="modeEnhanced"> Enhanced</label>
+                <span style="margin-left:12px">(URL ?mode=baseline|enhanced also supported)</span>
+            </div>
+
+            <div class="analytics-panel" id="datasetPanel">
+                <h4>Dataset</h4>
+                <div class="analytics-grid">
+                    <div class="analytics-item">
+                        <div class="analytics-label">Load provided JSON</div>
+                        <button class="start-btn" style="padding:10px 16px;font-size:14px" onclick="loadProvidedDataset()">Load Attached Dataset</button>
+                        <div id="datasetStatus" style="margin-top:8px;font-size:12px;color:#6b7280">None loaded</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Upload JSON</div>
+                        <input type="file" id="datasetFile" accept="application/json" onchange="handleDatasetFile(event)">
+                        <div style="margin-top:8px;font-size:12px;color:#6b7280">Select a local .json in PAL format</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="learning-content" id="learningContent" style="display: none;">
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="skillScore">50</div>
+                    <div class="stat-label">Skill Score</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="streak">0</div>
+                    <div class="stat-label">Streak</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="questionCount">0/5</div>
+                    <div class="stat-label">Questions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="adaptationRate">50%</div>
+                    <div class="stat-label">Adaptation</div>
+                </div>
+            </div>
+            
+            <div class="analytics-panel" id="analyticsPanel">
+                <h4>Learning Analytics</h4>
+                <div class="analytics-grid">
+                    <div class="analytics-item">
+                        <div class="analytics-label">Learning Velocity</div>
+                        <div class="analytics-value" id="learningVelocity">0.0</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Confidence Level</div>
+                        <div class="analytics-value" id="confidenceLevel">50%</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Avg Response Time</div>
+                        <div class="analytics-value" id="avgResponseTime">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Easy Accuracy</div>
+                        <div class="analytics-value" id="easyAccuracy">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Medium Accuracy</div>
+                        <div class="analytics-value" id="mediumAccuracy">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Hard Accuracy</div>
+                        <div class="analytics-value" id="hardAccuracy">--</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RL Analytics Panel -->
+            <div class="analytics-panel" id="rlAnalyticsPanel" style="display: none;">
+                <h4>🤖 RL Algorithm Analytics</h4>
+                <div class="analytics-grid">
+                    <div class="analytics-item">
+                        <div class="analytics-label">Algorithm Type</div>
+                        <div class="analytics-value" id="algorithmType">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Q-Values</div>
+                        <div class="analytics-value" id="qValues">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Exploration Rate</div>
+                        <div class="analytics-value" id="explorationRate">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Total Decisions</div>
+                        <div class="analytics-value" id="totalDecisions">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Blending Weights</div>
+                        <div class="analytics-value" id="blendingWeights">--</div>
+                    </div>
+                    <div class="analytics-item">
+                        <div class="analytics-label">Last Decision</div>
+                        <div class="analytics-value" id="lastDecision">--</div>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                    <div id="decisionReasoning" style="font-style: italic;">--</div>
+                </div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        
+        <div class="video-container">
+            <div id="player"></div>
+            <div class="question-overlay" id="questionOverlay">
+                <div class="question-card">
+                    <h3 class="question-title">
+                        Question <span id="questionNum">1</span>
+                        <span class="difficulty-badge" id="difficultyBadge">Easy</span>
+                    </h3>
+                    <div class="question-text" id="questionText"></div>
+                    <div class="options" id="optionsContainer"></div>
+                    <div id="feedback"></div>
+                    <button class="submit-btn" id="submitBtn" onclick="submitAnswer()" disabled>Submit Answer</button>
+                    <button class="skip-btn" id="continueBtn" onclick="continueVideo()" style="display: none;">Continue</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="completion" id="completion" style="display: none;">
+            <h2>🎉 Congratulations!</h2>
+            <p>You've completed all questions. Your adaptive learning profile has been updated!</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="finalScore">50</div>
+                    <div class="stat-label">Final Score</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="finalStreak">0</div>
+                    <div class="stat-label">Best Streak</div>
+                </div>
+            </div>
+            <button class="start-btn" onclick="resetToSelector()">Try Another Lesson</button>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="src/algorithms/time_streak_confidence.js"></script>
+    <script src="src/algorithms/rl_adaptive_learning.js"></script>
+    <script src="src/algorithms/hybrid_adaptive_learning.js"></script>
+    <script src="src/utils/dataset_loader.js"></script>
+    <script src="src/utils/session_logger.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>

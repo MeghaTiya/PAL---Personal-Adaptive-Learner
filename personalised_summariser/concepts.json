@@ -1,0 +1,9 @@
+[
+  { "id": "c1", "topic": "Data dredging", "category": "Machine Learning" },
+  { "id": "c2", "topic": "Correlation", "category": "Data Science" },
+  { "id": "c3", "topic": "Three types of correlation", "category": "Data Science" },
+  { "id": "c4", "topic": "Causality", "category": "Machine Learning" },
+  { "id": "c5", "topic": "Correlation vs Causation", "category": "Machine Learning" },
+  { "id": "c6", "topic": "Common causal variable", "category": "Machine Learning" },
+  { "id": "c7", "topic": "Oversimplification in causality", "category": "Machine Learning" }
+]

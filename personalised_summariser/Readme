@@ -1,0 +1,7 @@
+
+Stage 1 — Smart extraction with semantic search
+First, the backend preprocesses the whole lecture: it breaks the transcript into sentences and turns each sentence into a numeric vector with a SentenceTransformer. This creates a “semantic map” of the lecture.
+When a student asks about a concept (for example, “Correlation vs Causation”), the system converts that concept into a vector too and does a fast similarity search on the semantic map. That way it finds the most relevant sentences even if they use different words or are spread out. The process ignores conversational noise and collects a compact, context-rich block of raw text to use in the next step.
+
+Stage 2 — Context-aware synthesis with Llama 3.2
+The collected text (which may be fragmented) is sent to our Llama 3.2 1B Instruct model. Instead of a simple “summarize” command, the model receives a carefully designed prompt that makes it act like an expert teaching assistant. The prompt tells the model to use the lecture text as the main source but also allows it to fill gaps and clarify awkward phrasing using its own knowledge. The prompt can also adapt based on the student’s needs (e.g., request more detail for topics the student struggled with). The result is a clear, well-structured explanation that stays faithful to the lecture while improving readability and completeness.
