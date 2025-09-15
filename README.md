@@ -49,7 +49,7 @@ PAL---Personal-Adaptive-Learner/
 - Install and start:
 
 ```
-cd /Users/aryamanbahl/IIITH/PAL---Personal-Adaptive-Learner/demo_application
+cd /PAL---Personal-Adaptive-Learner/demo_application
 npm install
 npm start
 ```
