@@ -1,4 +1,3 @@
-
 # PAL — Hybrid RL Personal Adaptive Learner
 
 PAL selects question difficulty per interaction by blending a robust Statistical policy with a lightweight RL bandit. It adapts quickly, explains each decision, and gracefully falls back if a component is unavailable.
@@ -43,7 +42,7 @@ PAL---Personal-Adaptive-Learner/
 └── requirements_analysis.txt       # Python analysis deps
 ```
 
-## How Hybrid works 
+## How Hybrid works
 
 The Hybrid policy blends Statistical and RL predictions using a weight that grows with evidence (confidence, progress). Every decision includes an explanation (weights, predictions), improving transparency.
 
@@ -54,7 +53,7 @@ The Hybrid policy blends Statistical and RL predictions using a weight that grow
 1) Start server and collector:
 
 ```bash
-cd /Users/aryamanbahl/Desktop/IIITH/M25/AIISC/PAL---Personal-Adaptive-Learner
+cd /PAL---Personal-Adaptive-Learner
 python3 app.py --port 8080
 ```
 
@@ -71,7 +70,7 @@ open http://localhost:8080/index.html
 1) Install Node (nvm/Homebrew), then:
 
 ```bash
-cd /Users/aryamanbahl/Desktop/IIITH/M25/AIISC/PAL---Personal-Adaptive-Learner/react-learning-app
+cd /PAL---Personal-Adaptive-Learner/react-learning-app
 npm install
 npm start
 ```
@@ -86,7 +85,7 @@ npm start
 Run in another terminal:
 
 ```bash
-cd /Users/aryamanbahl/Desktop/IIITH/M25/AIISC/PAL---Personal-Adaptive-Learner
+cd /PAL---Personal-Adaptive-Learner
 python3 app.py --port 8080
 ```
 
@@ -112,6 +111,20 @@ python3 auto_run.py --port 8080 --runs 6 --modes enhanced --results data/pal_res
 python3 utils/adaptiveness_eval.py --results data/pal_results.jsonl --out results/hybrid_adaptiveness.png
 python3 utils/adaptiveness_eval.py --results data/pal_results.jsonl --out results/hybrid_adaptiveness_26.png --limit 26
 ```
+
+## Results (from `results/`)
+
+![Baseline vs Enhanced scorecard](results/pal_compare.png)
+
+- **Hybrid (enhanced) vs baseline**: Higher mean overall accuracy and final score across runs. Response times show wider variance due to exploration; median latency remains low for both.
+- **Difficulty-wise**: Gains are most visible on Easy/Medium; Hard remains challenging, and the policy backs off when confidence drops.
+
+![Adaptiveness across interactions](results/hybrid_adaptiveness.png)
+
+- **How to read**: Top track shows the chosen difficulty per interaction. Bottom traces are recent correctness means by difficulty. The policy escalates when recent performance is high and backs off after errors, reflecting the blend of Statistical thresholds and RL value updates.
+- **Takeaway**: The selector adapts quickly, oscillating early while it learns and stabilising as evidence accumulates.
+
+Reproduce these figures using the commands in "Headless evaluation & plots" above; artifacts are saved under `results/`.
 
 ## Getting the user’s response history
 
