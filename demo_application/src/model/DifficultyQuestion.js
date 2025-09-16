@@ -1,19 +1,30 @@
+/**
+ * Creates a question with only one difficulty
+ */
 export class DifficultyQuestion {
   #question;
   #questionOptions;
   #questionDetailedCorrectAnswer;
   #difficulty;
-  #tags;
+
+  /**
+   * Creates a question with only one difficulty
+   * @param {string} question Question
+   * @param {Array<string>} questionOptions Question options
+   * @param {string} questionCorrectAnswer Correct answer to question
+   * @param {string} questionDetailedCorrectAnswer Summary of why answer is correct
+   * @param {string} difficulty Difficulty of question
+   */
   constructor(
     question,
     questionOptions,
     questionCorrectAnswer,
     questionDetailedCorrectAnswer,
-    difficulty,
-    tags
+    difficulty
   ) {
     this.#question = question;
     this.#questionOptions = [];
+    // Set correct answer to first in array to simplify and add rest behind
     if (questionCorrectAnswer === "A") {
       this.#questionOptions.push(questionOptions[0]);
       questionOptions.forEach((question, index) => {
@@ -45,21 +56,36 @@ export class DifficultyQuestion {
     }
     this.#questionDetailedCorrectAnswer = questionDetailedCorrectAnswer;
     this.#difficulty = difficulty;
-    this.#tags = tags;
   }
 
+  /**
+   * Returns question
+   * @returns Question
+   */
   getQuestion() {
     return this.#question;
   }
 
+  /**
+   * Returns question options
+   * @returns Question options
+   */
   getQuestionOptions() {
     return this.#questionOptions;
   }
 
+  /**
+   * Returns difficulty of question
+   * @returns Difficulty of question
+   */
   getDifficulty() {
     return this.#difficulty;
   }
 
+  /**
+   * Returns summary of why answer is correct
+   * @returns Summary of why answer is correct
+   */
   getDetailedCorrectAnswer() {
     return this.#questionDetailedCorrectAnswer;
   }

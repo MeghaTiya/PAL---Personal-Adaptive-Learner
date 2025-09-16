@@ -1,3 +1,6 @@
+/**
+ * Creates a Lesson
+ */
 export class Lesson {
     #title;
     #questions;
@@ -6,8 +9,15 @@ export class Lesson {
     #thumbnailFileName;
     #vidFileName;
     #id;
-    #concepts;
 
+    /**
+     * Creates a Lesson
+     * @param {number} id ID of lesson
+     * @param {string} title Title of lesson
+     * @param {Array<Question>} questions Questions for lesson
+     * @param {string} thumbnailFileName File name of thumbnail
+     * @param {string} vidFidName File name of Video
+     */
     constructor(id, title, questions, thumbnailFileName, vidFidName) {
         this.#id = id;
         this.#title = title;
@@ -21,85 +31,68 @@ export class Lesson {
         this.#thumbnailFileName = thumbnailFileName;
         this.#vidFileName = vidFidName;
         console.log("Lesson constructor questions:", this.#questions, Array.isArray(questions));
-        this.#concepts = [];
     }
 
-    addConcept(concept) {
-        this.#concepts.addConcept(concept);
-    }
-
-    getConcepts() {
-        return this.#concepts;
-    }
-
+    /**
+     * Returns ID of lesson
+     * @returns ID of lesson
+     */
     getId() {
         return this.#id;
     }
 
+    /**
+     * Returns title of lesson
+     * @returns Title of lesson
+     */
     getTitle() {
         return this.#title;
     }
 
+    /**
+     * Returns questions for lesson
+     * @returns Questions for lesson
+     */
     getQuestions() {
         return this.#questions;
     }
 
-    getCurrentQuestion() {
-
-    }
-
+    /**
+     * Return user's score
+     * @returns User's score
+     */
     getUserScore() {
         return this.#userScore;
     }
 
+    /**
+     * Returns file name of thumbnail
+     * @returns File name of thumbnail
+     */
     getThumbnailFileName() {
         return this.#thumbnailFileName;
     }
 
+    /**
+     * Returns file name of Video
+     * @returns File name of Video
+     */
     getVidFileName() {
         return this.#vidFileName;
     }
 
-    getLessonComplete() {
-
-    }
-
+    /**
+     * Adds a question to questions
+     * @param {Question} question Question to be added
+     */
     addQuestion(question) {
         this.#questions.push(question);
     }
 
-    removeQuestion(question) {
-
-    }
-
-    moveToNextQuestion() {
-
-    }
-
-    moveToPrevQuestion() {
-
-    }
-
-    updateScore() {
-
-    }
-
-    startLesson() {
-
-    }
-
-    pauseLesson() {
-
-    }
-
-    unPauseLesson(timeStamp) {
-
-    }
-
-    endLesson() {
-        
-    }
-
+    /**
+     * Returns summary of lesson
+     * @returns Summary of lesson
+     */
     getSummary() {
         var totalAnswered = 0;
         var totalCorrect = 0;

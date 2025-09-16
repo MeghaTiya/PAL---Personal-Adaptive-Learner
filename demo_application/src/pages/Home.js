@@ -9,17 +9,20 @@ function Home() {
   const { logout, startNewLesson } = useLearningAppFascade();
   const navigate = useNavigate();
 
+  // Logout button is pressed
   const LogOut = () => {
     logout();
     navigate("/");
   };
 
+  // Video is pressed
   const MoveToVideo = (lesson) => {
     startNewLesson(lesson);
     navigate("/video");
   };
 
-  const AccessAccount = () => {};
+  // Account button is pressed
+  const AccessAccount = () => { };
 
   return (
     <div className={videoGridStyles.body}>

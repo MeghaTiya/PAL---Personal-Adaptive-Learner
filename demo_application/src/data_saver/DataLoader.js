@@ -56,8 +56,7 @@ function DataLoader() {
                     jsonquestion.question.options,
                     jsonquestion.question.answer,
                     jsonquestion.question.detailed_answer,
-                    jsonquestion.question.difficulty,
-                    jsonquestion.tags
+                    jsonquestion.question.difficulty
                   );
               });
 

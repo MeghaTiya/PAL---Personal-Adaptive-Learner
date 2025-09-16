@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { LearningAppFascade } from "../model/LearningAppFascade";
 
+/**
+ * Allows LearningAppFascade to be used as a useEffect
+ * @returns currentLesson, videoFileName, questions, summary, startNewLesson, resumeLesson, login, signUp, logout
+ */
 export function useLearningAppFascade() {
     const learningAppFascade = LearningAppFascade.getInstance();
     const [currentLesson, setCurrentLesson] = useState(learningAppFascade.getCurrentLesson());

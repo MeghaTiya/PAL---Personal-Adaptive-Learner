@@ -8,12 +8,14 @@ function SignUp() {
   const navigate = useNavigate();
   const { signUp } = useLearningAppFascade();
 
+  // Input box is changed
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputs(values => ({ ...values, [name]: value }))
   }
 
+  // Submit button is pressed
   const handleSubmit = (event) => {
     event.preventDefault();
     const { firstName, lastName, email, username, password } = inputs;

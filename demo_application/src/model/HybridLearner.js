@@ -1,11 +1,17 @@
 import { HybridPALAlgorithm } from "./HybridPALAlgorithm";
 
+/**
+ * Creates a Hybrid Learner
+ */
 export class HybridLearner {
   static #hybridLearner;
   #listeners = [];
   #gameState;
   #learner;
 
+  /**
+   * Creates a Hybrid Learner
+   */
   constructor() {
     this.#gameState = {
       skillScore: 50,
@@ -36,13 +42,16 @@ export class HybridLearner {
       },
     };
     this.#listeners = [];
-
     this.#learner = HybridPALAlgorithm.getInstance();
     this.#learner.reset(); // Start with a fresh state
     const firstDifficulty = this.#learner.getNextDifficulty({ state: this.#gameState });
     console.log(firstDifficulty);
   }
 
+  /**
+   * Returns singleton of Hybrid Learner
+   * @returns Singleton of Hybrid Learner
+   */
   static getInstance() {
     if (!this.#hybridLearner) {
       this.#hybridLearner = new HybridLearner();
@@ -66,6 +75,10 @@ export class HybridLearner {
     this.#gameState.learnerProfile.questionStartTime = Date.now();
   }
 
+  /**
+   * Gets next difficulty using HybridPALAlgorithm
+   * @returns Next difficulty
+   */
   getNextDifficulty() {
     const nextDifficulty = this.#learner.getNextDifficulty({
       state: this.#gameState,
@@ -73,8 +86,12 @@ export class HybridLearner {
     return nextDifficulty;
   }
 
+  /**
+   * Updates HybridPALAlgorithm based on if user's answer was correct
+   * @param {boolean} correct Was user's answer correct
+   */
   handleAnswer(correct) {
-    const updated = this.updateScore( correct, this.#gameState.currentDifficulty);
+    const updated = this.updateScore(correct, this.#gameState.currentDifficulty);
     this.notify();
   }
 

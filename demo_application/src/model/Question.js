@@ -18,8 +18,7 @@ export class Question {
     questionOptions,
     questionCorrectAnswer,
     questionDetailedCorrectAnswer,
-    difficulty,
-    tags
+    difficulty
   ) {
     this.#allDifficultyQuestions.forEach((difficultyQuestion) => {
       if (difficultyQuestion.getDifficulty === difficulty) {
@@ -32,8 +31,7 @@ export class Question {
         questionOptions,
         questionCorrectAnswer,
         questionDetailedCorrectAnswer,
-        difficulty,
-        tags
+        difficulty
       )
     );
   }

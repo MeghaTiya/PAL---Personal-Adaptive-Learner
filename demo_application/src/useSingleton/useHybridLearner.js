@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { HybridLearner } from "../model/HybridLearner";
 
+/**
+ * Allows Hybrid Learner to be used as a useEffect
+ * @returns handleAnswer, startQuestionTimer, nextDifficulty
+ */
 export function useHybridLearner() {
     const hybridLearner = HybridLearner.getInstance();
     const [nextDifficulty, setNextDifficulty] = useState(hybridLearner.getNextDifficulty());
